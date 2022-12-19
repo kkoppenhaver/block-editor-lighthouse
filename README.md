@@ -1,4 +1,4 @@
-# block-editor-lighthouse
+# Lighthouse in the Block Editor
 
 A WordPress plugin that brings Lighthouse performance scores right into the Block Editor.
 
@@ -9,7 +9,6 @@ This plugin uses [wp-env](https://developer.wordpress.org/block-editor/reference
 ```
 $ npm -g i @wordpress/env
 $ wp-env start
-
 ```
 
 The local environment will be available at http://localhost:8888 (Username: admin, Password: password).
