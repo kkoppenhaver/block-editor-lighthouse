@@ -1,14 +1,26 @@
 <?php
+/**
+ * Plugin Name:       Block Editor Lighthouse
+ * Description:       A settings panel that shows Lighthouse results in the Block Editor sidebar
+ * Requires at least: 6.1
+ * Requires PHP:      7.0
+ * Version:           0.1.0
+ * Author:            The WordPress Contributors
+ * License:           GPL-2.0-or-later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       block-editor-lighthouse
+ *
+ * @package           bel
+ */
 
 /**
- * Plugin Name:       Lighthouse in the Block Editor
- * Plugin URI:        https://github.com/kkoppenhaver/block-editor-lighthouse
- * Description:       Brings Lighthouse performance scores right into the Block Editor.
- * Version:           1.0
- * Requires at least: 5.2
- * Requires PHP:      7.2
- * Author:            Keanan Koppenhaver
- * Author URI:        https://keanan.dev
- * License:           GPL v2 or later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Registers the block using the metadata loaded from the `block.json` file.
+ * Behind the scenes, it registers also all assets so they can be enqueued
+ * through the block editor in the corresponding context.
+ *
+ * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
+function bel_block_editor_lighthouse_block_init() {
+	register_block_type( __DIR__ . '/build' );
+}
+add_action( 'init', 'bel_block_editor_lighthouse_block_init' );
