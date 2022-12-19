@@ -30,13 +30,12 @@ __webpack_require__.r(__webpack_exports__);
 
 class Sidebar extends _wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Component {
   render() {
-    console.log('sidebar being registered');
     const meta = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.select)('core/editor').getEditedPostAttribute('meta');
-    const exampleToggle = meta['_bel_plugin_data'];
+    const lighthouseData = meta['_bel_plugin_data'];
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_edit_post__WEBPACK_IMPORTED_MODULE_3__.PluginDocumentSettingPanel, {
       name: "bel-plugin-sidebar",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Lighthouse Score', 'block-editor-lighthouse')
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, "Lighthouse Data"));
+    }, !lighthouseData && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "No Lighthouse data available yet. Check back soon!"));
   }
 }
 
